@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed weather forecast</title>
+    <link rel="stylesheet" href="../static/detailedStyle.css">
+</head>
+<body>
+    <main>
+        <span class="city"><%= forecast.city %></span>
+        <div class="forecast">
+            <% for (let i=0; i<forecast.weather.length; i++) { %> 
+            <div class="card">
+                <span class="date">
+                    <%= forecast.weather[i].date %>
+                </span>
+                <img src="../static/<%= forecast.weather[i].icon%>.png" alt="<%= forecast.weather[i].icon%>">
+                <span class="temp">
+                    <%= forecast.weather[i].temp %>℃
+                </span>
+                <span class="message">
+                    <%= forecast.weather[i].message %>
+                </span>
+
+            </div>
+            <% } %> 
+        </div>
+    </main>
+</body>
+</html>
